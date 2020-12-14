@@ -184,6 +184,54 @@ class remi (
   $remi_php73_test_debuginfo_enabled     = 0,
   $remi_php73_test_debuginfo_includepkgs = undef,
   $remi_php73_test_debuginfo_exclude     = undef,
+
+  $remi_php74_baseurl                    = absent,
+  $remi_php74_mirrorlist                 = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/php74/mirror",
+  $remi_php74_enabled                    = 0,
+  $remi_php74_includepkgs                = undef,
+  $remi_php74_exclude                    = undef,
+
+  $remi_php74_debuginfo_baseurl          = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-php74/\$basearch/",
+  $remi_php74_debuginfo_mirrorlist       = absent,
+  $remi_php74_debuginfo_enabled          = 0,
+  $remi_php74_debuginfo_includepkgs      = undef,
+  $remi_php74_debuginfo_exclude          = undef,
+
+  $remi_php74_test_baseurl               = absent,
+  $remi_php74_test_mirrorlist            = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/test74/mirror",
+  $remi_php74_test_enabled               = 0,
+  $remi_php74_test_includepkgs           = undef,
+  $remi_php74_test_exclude               = undef,
+
+  $remi_php74_test_debuginfo_baseurl     = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-test74/\$basearch/",
+  $remi_php74_test_debuginfo_mirrorlist  = absent,
+  $remi_php74_test_debuginfo_enabled     = 0,
+  $remi_php74_test_debuginfo_includepkgs = undef,
+  $remi_php74_test_debuginfo_exclude     = undef,
+
+  $remi_php80_baseurl                    = absent,
+  $remi_php80_mirrorlist                 = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/php80/mirror",
+  $remi_php80_enabled                    = 0,
+  $remi_php80_includepkgs                = undef,
+  $remi_php80_exclude                    = undef,
+
+  $remi_php80_debuginfo_baseurl          = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-php80/\$basearch/",
+  $remi_php80_debuginfo_mirrorlist       = absent,
+  $remi_php80_debuginfo_enabled          = 0,
+  $remi_php80_debuginfo_includepkgs      = undef,
+  $remi_php80_debuginfo_exclude          = undef,
+
+  $remi_php80_test_baseurl               = absent,
+  $remi_php80_test_mirrorlist            = "http://cdn.remirepo.net/enterprise/${::operatingsystemmajrelease}/test80/mirror",
+  $remi_php80_test_enabled               = 0,
+  $remi_php80_test_includepkgs           = undef,
+  $remi_php80_test_exclude               = undef,
+
+  $remi_php80_test_debuginfo_baseurl     = "http://rpms.remirepo.net/enterprise/${::operatingsystemmajrelease}/debug-test80/\$basearch/",
+  $remi_php80_test_debuginfo_mirrorlist  = absent,
+  $remi_php80_test_debuginfo_enabled     = 0,
+  $remi_php80_test_debuginfo_includepkgs = undef,
+  $remi_php80_test_debuginfo_exclude     = undef,
 ){
 
   if $use_epel {
@@ -412,6 +460,70 @@ class remi (
         enabled     => $remi_php73_test_debuginfo_enabled,
         includepkgs => $remi_php73_test_debuginfo_includepkgs,
         exclude     => $remi_php73_test_debuginfo_exclude;
+
+      'remi-php74':
+        descr       => "Remi's PHP 7.4 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
+        baseurl     => $remi_php74_baseurl,
+        mirrorlist  => $remi_php74_mirrorlist,
+        enabled     => $remi_php74_enabled,
+        includepkgs => $remi_php74_includepkgs,
+        exclude     => $remi_php74_exclude;
+
+      'remi-php74-debuginfo':
+        descr       => "Remi's PHP 7.4 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
+        baseurl     => $remi_php74_debuginfo_baseurl,
+        mirrorlist  => $remi_php74_debuginfo_mirrorlist,
+        enabled     => $remi_php74_debuginfo_enabled,
+        includepkgs => $remi_php74_debuginfo_includepkgs,
+        exclude     => $remi_php74_debuginfo_exclude;
+
+      'remi-php74-test':
+        descr       => "Remi's PHP 7.4 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
+        baseurl     => $remi_php74_test_baseurl,
+        mirrorlist  => $remi_php74_test_mirrorlist,
+        enabled     => $remi_php74_test_enabled,
+        includepkgs => $remi_php74_test_includepkgs,
+        exclude     => $remi_php74_test_exclude;
+
+      'remi-php74-test-debuginfo':
+        descr       => "Remi's PHP 7.4 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
+        baseurl     => $remi_php74_test_debuginfo_baseurl,
+        mirrorlist  => $remi_php74_test_debuginfo_mirrorlist,
+        enabled     => $remi_php74_test_debuginfo_enabled,
+        includepkgs => $remi_php74_test_debuginfo_includepkgs,
+        exclude     => $remi_php74_test_debuginfo_exclude;
+
+      'remi-php80':
+        descr       => "Remi's PHP 8.0 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
+        baseurl     => $remi_php80_baseurl,
+        mirrorlist  => $remi_php80_mirrorlist,
+        enabled     => $remi_php80_enabled,
+        includepkgs => $remi_php80_includepkgs,
+        exclude     => $remi_php80_exclude;
+
+      'remi-php80-debuginfo':
+        descr       => "Remi's PHP 8.0 RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
+        baseurl     => $remi_php80_debuginfo_baseurl,
+        mirrorlist  => $remi_php80_debuginfo_mirrorlist,
+        enabled     => $remi_php80_debuginfo_enabled,
+        includepkgs => $remi_php80_debuginfo_includepkgs,
+        exclude     => $remi_php80_debuginfo_exclude;
+
+      'remi-php80-test':
+        descr       => "Remi's PHP 8.0 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
+        baseurl     => $remi_php80_test_baseurl,
+        mirrorlist  => $remi_php80_test_mirrorlist,
+        enabled     => $remi_php80_test_enabled,
+        includepkgs => $remi_php80_test_includepkgs,
+        exclude     => $remi_php80_test_exclude;
+
+      'remi-php80-test-debuginfo':
+        descr       => "Remi's PHP 8.0 test RPM repository for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - debuginfo",
+        baseurl     => $remi_php80_test_debuginfo_baseurl,
+        mirrorlist  => $remi_php80_test_debuginfo_mirrorlist,
+        enabled     => $remi_php80_test_debuginfo_enabled,
+        includepkgs => $remi_php80_test_debuginfo_includepkgs,
+        exclude     => $remi_php80_test_debuginfo_exclude;
     }
   } else {
     notice("This remi module does not support ${::operatingsystem}.")
